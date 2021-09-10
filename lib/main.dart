@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         ),
         body: Row(
           children: [
-            Text('The question!!!'),
+            Text(questions.elementAt(0)),
             ElevatedButton(
               child: Text('Answer1'),
               onPressed: answerQuestion,
