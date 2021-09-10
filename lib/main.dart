@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('My first flutter App'),
         ),
-        body: Column(
+        body: Row(
           children: [
             Text('The question!!!'),
             ElevatedButton(
