@@ -9,9 +9,9 @@ class Quiz extends StatelessWidget {
   final int questionIndex;
 
   Quiz({
-    @required this.questions,
-    @required this.answerQuestion,
-    @required this.questionIndex,
+    required this.questions,
+    required this.answerQuestion,
+    required this.questionIndex,
   }); // named argument
 
   @override
