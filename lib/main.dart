@@ -35,7 +35,7 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('My first flutter App'),
         ),
-        body: Row(
+        body: Column(
           children: [
             Question(questions[_questionIndex]),
             ElevatedButton(
