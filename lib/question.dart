@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Question extends StatelessWidget {
   final String questionText;
 
-  Question(this.questionText); // postionional arguments
+  Question(this.questionText); // positional arguments
 
   @override
   Widget build(BuildContext context) {
