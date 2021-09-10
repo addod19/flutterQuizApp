@@ -15,6 +15,16 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  final questions = const [
+    {
+      'questionText': 'What\'s your fav color?',
+      'answers': ['Black', 'Red', 'White', 'Green'],
+    },
+    {
+      'questionText': 'Whats\s your fav programming language?',
+      'answers': ['JS', 'DART', 'RUBY', 'C#'],
+    }
+  ];
   var _questionIndex = 0;
 
   void _answerQuestion() {
@@ -22,36 +32,33 @@ class _MyAppState extends State<MyApp> {
       _questionIndex = _questionIndex + 1;
     });
     print(_questionIndex);
+    if (_questionIndex < questions.length) {
+      print('We have more questions');
+    } else {
+      print('We have no more questions!!!');
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    var questions = [
-      {
-        'questionText': 'What\'s your fav color?',
-        'answers': ['Black', 'Red', 'White', 'Green'],
-      },
-      {
-        'questionText': 'Whats\s your fav programming language?',
-        'answers': ['JS', 'DART', 'RUBY', 'C#'],
-      }
-    ];
-
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: Text('My first flutter App'),
         ),
-        body: Column(
-          children: [
-            Question(
-              questions[_questionIndex]['questionText'],
-            ),
-            Answer(_answerQuestion),
-            Answer(_answerQuestion),
-            Answer(_answerQuestion),
-          ],
-        ),
+        body: _questionIndex < questions.length
+            ? Column(
+                children: [
+                  Question(
+                    questions[_questionIndex]['questionText']?.toString() ?? '',
+                  ),
+                  ...(questions[_questionIndex]['answers'] as List<String>)
+                      .map((answer) {
+                    return Answer(_answerQuestion, answer);
+                  }).toList()
+                ],
+              )
+            : Center(child: Text('Congratulations')),
       ),
     );
   }
