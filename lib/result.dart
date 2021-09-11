@@ -35,13 +35,11 @@ class Result extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
             textAlign: TextAlign.center,
-            // textAlign: TextAlign.center,
           ),
           TextButton(
             child: Text(
               'Restart Quiz',
             ),
-            // textColor: Colors.blue,
             onPressed: resetHandler,
           ),
         ],
