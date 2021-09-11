@@ -34,6 +34,7 @@ class Result extends StatelessWidget {
               fontSize: 36,
               fontWeight: FontWeight.bold,
             ),
+            textAlign: TextAlign.center,
             // textAlign: TextAlign.center,
           ),
           TextButton(
